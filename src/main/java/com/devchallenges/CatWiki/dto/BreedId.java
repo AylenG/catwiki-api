@@ -3,6 +3,7 @@ package com.devchallenges.CatWiki.dto;
 public class BreedId {
 
 	private String id;
+	private String name;
 
 	/**
 	 * @return the id
@@ -16,6 +17,20 @@ public class BreedId {
 	 */
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

@@ -49,12 +49,16 @@ public class BreedRestController {
 	
 	@GetMapping("/breed/{id}")
 	RestResponse getBreedById(@PathVariable("id") String id) {
-		Breed breed = null;
+		Breed breed = new Breed();
 		
 		try {
 			breed = breedService.getBreedById(id);
 		} catch(Exception e) {
 			return new RestResponse(breed, true, "Error getting breed '" + id + "'. Detail: " + e.getMessage()); 
+		}
+		
+		if(breed.getId() == null) {
+			return new RestResponse(null, true, "Error. Breed doesn't exists"); 
 		}
 		
 		return new RestResponse(breed, false, ""); 
